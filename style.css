@@ -26,6 +26,12 @@
     --transition: all 0.3s ease;
 }
 
+html,
+body {
+    overflow-x: hidden !important;
+    position: relative;
+}
+
 /* --- Reset & Base --- */
 *,
 *::before,
@@ -46,6 +52,12 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     background: var(--white);
+}
+
+.site-wrapper {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 h1,
@@ -1482,6 +1494,35 @@ img {
     .areas-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+
+    .cta-strip::before {
+        width: 200px;
+        /* Reduce size */
+        height: 200px;
+        right: 0;
+        /* No negative, align to edge */
+    }
+
+    .cta-strip::after {
+        width: 150px;
+        height: 150px;
+        left: 0;
+    }
+
+    .experience-badge {
+        right: 10px;
+        /* Positive inside, no overflow */
+        bottom: -10px;
+        /* Slight overlap but clipped */
+        padding: 14px 20px;
+        /* Smaller if needed */
+    }
+
+    .experience-badge strong {
+        font-size: 1.8rem;
+        /* Adjust for fit */
+    }
 }
 
 @media (max-width: 768px) {
@@ -1611,6 +1652,20 @@ img {
 
     .contact-form {
         padding: 28px;
+    }
+
+    .cta-strip::before,
+    .cta-strip::after {
+        display: none;
+        /* Optional: Hide decorative blobs on very small screens to eliminate risk */
+    }
+
+    .experience-badge {
+        position: static;
+        /* Make relative or static to avoid absolute overflow */
+        margin: 20px auto 0;
+        /* Center it below image instead */
+        width: fit-content;
     }
 }
 
