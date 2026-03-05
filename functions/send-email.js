@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');  // For making API calls
-
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
@@ -7,12 +5,12 @@ exports.handler = async (event) => {
 
   const { name, email, phone, service, message } = JSON.parse(event.body);
 
-  // Validate inputs (add more as needed)
+  // Validate inputs
   if (!name || !email || !phone || !service) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing required fields' }) };
   }
 
-  const BREVO_API_KEY = process.env.BREVO_API_KEY;  // Securely pulled from env vars
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
   const BUSINESS_EMAIL = 'designxfolio@gmail.com';
   const SENDER_NAME = 'ProFix Home Services';
   const SENDER_EMAIL = 'designxfolio@gmail.com';
@@ -23,13 +21,17 @@ exports.handler = async (event) => {
     'content-type': 'application/json'
   };
 
+  const baseBody = {
+    sender: { name: SENDER_NAME, email: SENDER_EMAIL }
+  };
+
   try {
     // Email to business
     await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        sender: { name: SENDER_NAME, email: SENDER_EMAIL },
+        ...baseBody,
         to: [{ email: BUSINESS_EMAIL }],
         subject: `🚨 New Quote Request - ${name}`,
         htmlContent: `
@@ -50,7 +52,7 @@ exports.handler = async (event) => {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        sender: { name: SENDER_NAME, email: SENDER_EMAIL },
+        ...baseBody,
         to: [{ email: email }],
         subject: `Thank you ${name.split(' ')[0]} – ProFix Team ❤️`,
         htmlContent: `
