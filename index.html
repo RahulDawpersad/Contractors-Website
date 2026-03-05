@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="24/7 Emergency Plumbing, Electrical & Home Repair Services in Durban. Fast, Reliable & Affordable. Call Now for Immediate Assistance.">
+    <meta name="keywords"
+        content="plumber durban, electrician durban, home repairs, emergency plumbing, bathroom renovations, CCTV installation, gate motor repairs">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico" type="image/x-icon">
+    <title>ProFix Home Services | 24/7 Emergency Plumbing & Repairs in Durban</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner" id="emergencyBanner">
+        <div class="container">
+            <p>🚨 <strong>EMERGENCY?</strong> We're available 24/7 — Call <a href="tel:+27310000000">031 000 0000</a>
+                now for immediate help!</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🔧</span>
+                <span class="logo-text">Pro<span class="accent">Fix</span></span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+                <!-- NEW: Auth container (will be populated by JS) -->
+                <li id="auth-links"></li>
+
+                <li class="nav-cta"><a href="tel:+27310000000" class="btn btn-accent btn-sm"><i
+                            class="fas fa-phone"></i> Call Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content" data-animate="fade-right">
+                <span class="hero-badge">⚡ Available 24/7 — Even Holidays</span>
+                <h1>24/7 Emergency Plumbing Services in <span class="accent">Durban</span></h1>
+                <p class="hero-subtext">Fast, Reliable &amp; Affordable Home Repairs. Call Now for Immediate Assistance.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tel:+27310000000" class="btn btn-accent btn-lg">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/27310000000?text=Hi%20ProFix%2C%20I%20need%20help%20with%20a%20home%20repair."
+                        class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Jobs Completed</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>4.9★</strong>
+                        <span>Google Rating</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>30min</strong>
+                        <span>Avg Response</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-animate="fade-left">
+                <img src="https://mgx-backend-cdn.metadl.com/generate/images/187816/2026-03-03/e2041dcf-50d1-41d1-b184-5ac97de92515.png"
+                    alt="Professional technician working on plumbing" loading="eager">
+                <div class="hero-image-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Fully Insured &amp; Certified</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1440,60 L1440,120 L0,120 Z" fill="#f8f9fa"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 2. TRUST BAR -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item" data-animate="fade-up">
+                    <i class="fas fa-award"></i>
+                    <span>10+ Years Experience</span>
+                </div>
+                <div class="trust-item" data-animate="fade-up" data-delay="100">
+                    <i class="fas fa-clock"></i>
+                    <span>Same Day Service</span>
+                </div>
+                <div class="trust-item" data-animate="fade-up" data-delay="200">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Fully Insured</span>
+                </div>
+                <div class="trust-item" data-animate="fade-up" data-delay="300">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Free Quotations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">What We Do</span>
+                <h2>Our Professional <span class="accent">Services</span></h2>
+                <p>From emergency repairs to full renovations — we've got you covered.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Leak Detection</h3>
+                    <p>Advanced leak detection and repair services. We find and fix leaks fast to prevent costly water
+                        damage.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Installations</h3>
+                    <p>Professional electrical wiring, installations, and repairs. COC certificates issued for all
+                        electrical work.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3>Bathroom Renovations</h3>
+                    <p>Complete bathroom makeovers from design to finish. Modern fixtures, tiling, and plumbing
+                        upgrades.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Installation</h3>
+                    <p>HD security camera systems with remote viewing. Protect your home and business 24/7.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3>Ceiling Repairs</h3>
+                    <p>Expert ceiling repairs, replacements, and installations. We restore damaged ceilings to look
+                        brand new.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3>Gate Motor Repairs</h3>
+                    <p>Gate motor installation, repairs, and maintenance. All major brands serviced with warranty.</p>
+                </div>
+            </div>
+            <div class="section-cta" data-animate="fade-up">
+                <a href="#contact" class="btn btn-accent btn-lg">View All Services <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHY CHOOSE US -->
+    <section class="why-us" id="why-us">
+        <div class="container why-us-container">
+            <div class="why-us-image" data-animate="fade-right">
+                <img src="https://mgx-backend-cdn.metadl.com/generate/images/187816/2026-03-03/61ef80d7-6b62-4534-a375-41d5e11a5302.png"
+                    alt="Our professional team of technicians">
+                <div class="experience-badge">
+                    <strong>10+</strong>
+                    <span>Years of Trusted Service</span>
+                </div>
+            </div>
+            <div class="why-us-content" data-animate="fade-left">
+                <span class="section-tag">Why ProFix?</span>
+                <h2>Why Durban Homeowners <span class="accent">Trust Us</span></h2>
+                <p class="why-us-intro">We don't just fix problems — we deliver peace of mind. Here's what sets us apart
+                    from the rest.</p>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <strong>Affordable &amp; Transparent Pricing</strong>
+                            <p>No hidden fees. You get a clear quote before any work begins.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <strong>Fast Response Time</strong>
+                            <p>Average 30-minute response for emergencies in Durban.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <strong>Skilled &amp; Qualified Technicians</strong>
+                            <p>All our team members are certified and background-checked.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <strong>Clean &amp; Professional Workmanship</strong>
+                            <p>We leave your home cleaner than we found it. Every time.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <strong>100% Customer Satisfaction Guarantee</strong>
+                            <p>Not happy? We'll come back and make it right — free of charge.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BEFORE & AFTER GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Our Work</span>
+                <h2>Before &amp; After <span class="accent">Transformations</span></h2>
+                <p>See the difference our team makes. Real projects, real results.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-animate="fade-up">
+                    <div class="gallery-slider">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/187816/2026-03-03/f69e7fe1-4e1e-46a1-a5d4-fc97be8716e3.png"
+                            alt="Bathroom renovation before and after">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">Bathroom Renovation</span>
+                            <span class="gallery-tag">Before &amp; After</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-animate="fade-up" data-delay="200">
+                    <div class="gallery-slider">
+                        <img src="https://mgx-backend-cdn.metadl.com/generate/images/187816/2026-03-03/0bd16698-9946-4a35-a5ad-5009006a6687.png"
+                            alt="Kitchen renovation before and after">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">Kitchen Renovation</span>
+                            <span class="gallery-tag">Before &amp; After</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GOOGLE REVIEWS -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our Customers <span class="accent">Say</span></h2>
+                <p>Don't just take our word for it — hear from real customers.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card" data-animate="fade-up">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Excellent service, arrived within 30 minutes! Fixed our burst pipe quickly
+                        and professionally. Highly recommend ProFix!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">TM</div>
+                        <div>
+                            <strong>Thabo Mkhize</strong>
+                            <span>Durban North</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" data-animate="fade-up" data-delay="100">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"They renovated our entire bathroom in just 5 days. The quality is amazing
+                        and the price was very fair. Best contractors in Durban!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">SP</div>
+                        <div>
+                            <strong>Sarah Pillay</strong>
+                            <span>Umhlanga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card" data-animate="fade-up" data-delay="200">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Called them for an emergency electrical fault at 10pm. They came out
+                        immediately and sorted everything. Lifesavers! Thank you ProFix."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">RN</div>
+                        <div>
+                            <strong>Rajesh Naidoo</strong>
+                            <span>Chatsworth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta" data-animate="fade-up">
+                <a href="https://www.google.com/maps" class="btn btn-outline btn-lg" target="_blank">
+                    <i class="fab fa-google"></i> View More Reviews on Google
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA STRIP -->
+    <section class="cta-strip">
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <h2>Need <span class="accent">Urgent</span> Assistance?</h2>
+                <p>Our team is standing by 24/7. Don't wait — get help now.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+27310000000" class="btn btn-accent btn-lg">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                    <a href="https://wa.me/27310000000?text=Hi%20ProFix%2C%20I%20need%20a%20free%20quote."
+                        class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Get a Free Quote on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SERVICE AREAS -->
+    <section class="service-areas" id="areas">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Coverage</span>
+                <h2>Areas We <span class="accent">Serve</span></h2>
+                <p>Proudly serving homeowners across the greater Durban area.</p>
+            </div>
+            <div class="areas-grid" data-animate="fade-up">
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Durban</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Phoenix</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Umhlanga</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Chatsworth</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Pinetown</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Amanzimtoti</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Ballito</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Hillcrest</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Westville</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Durban North</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Berea</div>
+                <div class="area-item"><i class="fas fa-map-marker-alt"></i> Morningside</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS: FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">FAQ</span>
+                <h2>Frequently Asked <span class="accent">Questions</span></h2>
+                <p>Got questions? We've got answers.</p>
+            </div>
+            <div class="faq-list" data-animate="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer 24/7 emergency services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We're available 24 hours a day, 7 days a week — including public holidays. For
+                            emergencies like burst pipes, electrical faults, or security issues, call us immediately and
+                            we'll dispatch a technician right away.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How quickly can you respond to an emergency?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our average response time for emergencies in the Durban area is 30 minutes. We have
+                            technicians stationed across the city to ensure fast service.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you provide free quotations?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We provide free, no-obligation quotations for all our services. Simply call us or
+                            send a WhatsApp message with details of the job, and we'll get back to you with a
+                            transparent quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are your technicians qualified and insured?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all our technicians are fully qualified, certified, and insured. We also conduct
+                            background checks on all team members for your safety and peace of mind.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What areas do you cover?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We serve the entire greater Durban area including Phoenix, Umhlanga, Chatsworth, Pinetown,
+                            Amanzimtoti, Ballito, Hillcrest, Westville, and surrounding suburbs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept cash, EFT/bank transfers, and card payments. Payment terms are discussed upfront
+                            before any work begins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info" data-animate="fade-right">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact <span class="accent">Us</span></h2>
+                <p>Ready to get started? Reach out to us through any of the channels below.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+27310000000">031 000 0000</a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <a href="https://wa.me/27697020214" target="_blank">+27 69 702 0214</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="/cdn-cgi/l/email-protection#f49d9a929bb484869b929d8c90818696959ada979bda8e95"><span
+                                    class="__cf_email__"
+                                    data-cfemail="fb92959d94bb8b89949d92839f8e89999a95d59894d5819a">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <strong>Address</strong>
+                            <span>123 Smith Street, Durban, KZN, 4001</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <strong>Business Hours</strong>
+                            <span>Mon - Fri: 7:00 AM - 6:00 PM</span>
+                            <span>Sat: 8:00 AM - 2:00 PM</span>
+                            <span>Sun &amp; Holidays: Emergency Only</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper" data-animate="fade-left">
+                <form class="contact-form" id="contactForm">
+                    <h3>Request a Free Quote</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. 031 000 0000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="leak-detection">Leak Detection</option>
+                            <option value="electrical">Electrical Installations</option>
+                            <option value="bathroom">Bathroom Renovations</option>
+                            <option value="cctv">CCTV Installation</option>
+                            <option value="ceiling">Ceiling Repairs</option>
+                            <option value="gate-motor">Gate Motor Repairs</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Describe your issue or what you need help with..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-accent btn-lg btn-full">
+                        <i class="fas fa-paper-plane"></i> Send Request
+                    </button>
+                    <p class="form-note">We'll get back to you within 30 minutes during business hours.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-icon">🔧</span>
+                        <span class="logo-text">Pro<span class="accent">Fix</span></span>
+                    </a>
+                    <p>Durban's most trusted home services company. We provide fast, reliable, and affordable plumbing,
+                        electrical, and renovation services 24/7.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Leak Detection</a></li>
+                        <li><a href="#services">Electrical Work</a></li>
+                        <li><a href="#services">Bathroom Renovations</a></li>
+                        <li><a href="#services">CCTV Installation</a></li>
+                        <li><a href="#services">Ceiling Repairs</a></li>
+                        <li><a href="#services">Gate Motor Repairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+27310000000">031 000 0000</a></li>
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="/cdn-cgi/l/email-protection#90f9fef6ffd0e0e2fff6f9e8f4e5e2f2f1febef3ffbeeaf1"><span
+                                    class="__cf_email__"
+                                    data-cfemail="3851565e5778484a575e51405c4d4a5a5956165b57164259">[email&#160;protected]</span></a>
+                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Smith Street, Durban</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProFix Home Services. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY BUTTONS -->
+    <div class="sticky-whatsapp" id="stickyWhatsapp">
+        <a href="https://wa.me/27310000000?text=Hi%20ProFix%2C%20I%20need%20help." target="_blank"
+            aria-label="WhatsApp us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <div class="sticky-call" id="stickyCall">
+        <a href="tel:+27310000000" aria-label="Call us">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- QUOTE POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <div class="popup-content">
+                <div class="popup-icon">💬</div>
+                <h3>Need a Quick Quote?</h3>
+                <p>Get a FREE no-obligation quote in minutes. Just tell us what you need!</p>
+                <div class="popup-buttons">
+                    <a href="https://wa.me/27310000000?text=Hi%20ProFix%2C%20I%20need%20a%20free%20quote."
+                        class="btn btn-whatsapp btn-lg" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Quote
+                    </a>
+                    <a href="tel:+27310000000" class="btn btn-accent btn-lg">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Login to ProFix</h2>
+                <span class="close-modal" id="close-auth-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form">
+                    <div class="form-group">
+                        <label for="auth-email">Email Address</label>
+                        <input type="email" id="auth-email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="auth-password">Password</label>
+                        <input type="password" id="auth-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" id="auth-submit" class="btn btn-accent btn-full">Login</button>
+                </form>
+
+                <div id="auth-switch" class="auth-switch">
+                    Don't have an account? <a href="#" id="switch-auth-mode">Sign Up</a>
+                </div>
+
+                <div id="auth-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

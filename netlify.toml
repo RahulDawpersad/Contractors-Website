@@ -1,0 +1,5 @@
+[build]
+  functions = "functions"  # Folder where your Node.js functions will live
+
+[functions]
+  node_bundler = "esbuild"  # Helps bundle dependencies efficiently
