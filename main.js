@@ -261,58 +261,58 @@ document.addEventListener('DOMContentLoaded', function () {
             if (emailInput) emailInput.value = currentUser.email;
         }
 
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
+       contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value.trim();
 
-            if (!name || !email || !phone || !service) {
-                showFormMessage('Please fill in all required fields.', 'error');
-                return;
-            }
+    if (!name || !email || !phone || !service) {
+        showFormMessage('Please fill in all required fields.', 'error');
+        return;
+    }
 
-            // Save to Supabase if logged in
-            if (currentUser) {
-                await supabaseClient.from('contact_requests').insert({
-                    user_id: currentUser.id,
-                    name, phone, service,
-                    message: message || null
-                });
-            }
-
-            // WhatsApp message
-            const whatsappMsg = `Hi ProFix!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message || 'No message'}`;
-
-            // === SEND EMAILS VIA BREVO ===
-            try {
-                const response = await fetch('/.netlify/functions/send-email', {  // Or full URL if needed
-                    method: 'POST',
-                    body: JSON.stringify({ name, email, phone, service, message })
-                });
-
-                if (!response.ok) throw new Error('Failed to send');
-
-                // Proceed with success message, WhatsApp, etc.
-                showFormMessage(`Thank you ${name.split(' ')[0]}! Emails sent. We'll reply in 30 mins. Opening WhatsApp...`, 'success');
-
-                // WhatsApp logic...
-            } catch (err) {
-                showFormMessage('Error sending request. Please try again.', 'error');
-            }
-
-            // Success message + WhatsApp
-            showFormMessage(`Thank you ${name.split(' ')[0]}! Emails sent. We'll reply in 30 mins. Opening WhatsApp...`, 'success');
-
-            setTimeout(() => {
-                window.open(`https://wa.me/27310000000?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
-            }, 1500);
-
-            contactForm.reset();
+    // Save to Supabase if logged in
+    if (currentUser) {
+        await supabaseClient.from('contact_requests').insert({
+            user_id: currentUser.id,
+            name, phone, service,
+            message: message || null
         });
+    }
+
+    // WhatsApp message
+    const whatsappMsg = `Hi ProFix!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message || 'No message'}`;
+
+    try {
+        const response = await fetch('/.netlify/functions/send-email', {
+            method: 'POST',
+            body: JSON.stringify({ name, email, phone, service, message })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);  // Log success for debugging
+
+        showFormMessage(`Thank you ${name.split(' ')[0]}! Emails sent. We'll reply in 30 mins. Opening WhatsApp...`, 'success');
+
+        setTimeout(() => {
+            window.open(`https://wa.me/27310000000?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+        }, 1500);
+
+    } catch (err) {
+        console.error('Form submit error:', err);
+        showFormMessage('Error sending request. Please try again.', 'error');
+    }
+
+    contactForm.reset();
+});
     }
 
 
@@ -431,4 +431,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     console.log('✅ ProFix Home Services - Fully Loaded with Secure Supabase Auth! 🔧');
+
 });
