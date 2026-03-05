@@ -1,5 +1,4 @@
 [build]
-  functions = "functions"  # Folder where your Node.js functions will live
-
-[functions]
-  node_bundler = "esbuild"  # Helps bundle dependencies efficiently
+  command = ""  # Leave empty if no build step (e.g., no npm build)
+  publish = "."  # Or your output dir, usually root for static sites
+  functions = "functions"  # This tells Netlify where your functions are
