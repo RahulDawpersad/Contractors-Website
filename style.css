@@ -131,6 +131,7 @@ img {
     margin-top: 48px;
 }
 
+
 /* --- Buttons --- */
 .btn {
     display: inline-flex;
@@ -187,13 +188,14 @@ img {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-.btn-outline {
+.google-reviews {
     background: transparent;
     color: var(--primary);
     border: 2px solid var(--primary);
+    /* width: 100%; */
 }
 
-.btn-outline:hover {
+.google-reviews:hover {
     background: var(--primary);
     color: var(--white);
     transform: translateY(-2px);
@@ -1667,11 +1669,18 @@ img {
         /* Center it below image instead */
         width: fit-content;
     }
+
+   
 }
 
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.8rem;
+    }
+
+     .google-reviews{
+        width: 100%;
+        padding: 20px 20px;
     }
 
     .hero-buttons {
